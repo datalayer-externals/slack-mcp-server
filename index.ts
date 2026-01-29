@@ -118,7 +118,11 @@ export class SlackClient {
       }),
     });
 
-    return response.json();
+    const data = await response.json();
+    return {
+      ok: data.ok,
+      error: data.error,
+    };
   }
 
   async postReply(
@@ -136,7 +140,11 @@ export class SlackClient {
       }),
     });
 
-    return response.json();
+    const data = await response.json();
+    return {
+      ok: data.ok,
+      error: data.error,
+    };
   }
 
   async addReaction(
